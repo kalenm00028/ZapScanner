@@ -1,0 +1,28 @@
+This programs does a spider scan and/or active scan of a website and creates a report of security vulnerabilities* on that website
+*Only uses signatures that come pre-built into ZAP
+
+Zed Attack Proxy Download: https://github.com/zaproxy/zaproxy/wiki/Downloads
+ZAP Python API Download: https://pypi.python.org/pypi/python-owasp-zap-v2.4
+	ZAP Python API may be installed using:
+	'pip install python-owasp-zap-v2.4'
+
+Before running for the first time, the API key must be set.
+The key may be found in the ZAP client, under Tools>>Options>>API
+API key may be set using:
+'python zapScanner.py -k <api key>'
+Key may be set again later in the same way if necessary
+
+Standard use:
+'python zapScanner.py -t <target> -r <report format> -a [active scan] -s [spider scan]'
+Target must contain 'http://' or 'https://'
+Report output options are xml and html
+
+Example:
+        python zapScanner.py -t http://example.com -r html -s
+
+All args:
+	-t, --target
+	-r, --report
+	-a, --ascan
+	-s, --sscan
+	-k, --key
